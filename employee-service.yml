@@ -1,6 +1,20 @@
 spring:
-  profiles:
-    active: dev
+    datasource:
+    url: jdbc:mysql://localhost:3306/employees?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 048855
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10     # Maksimum es zamanli baglanti sayisi
+      minimum-idle: 2           # Hazirda bekleyen minimum baglanti
+      idle-timeout: 30000       # Bosta kalan baglantinin kapatilma suresi (ms)
+      max-lifetime: 1800000     # Baglantinin maksimum omru (ms)
+      connection-timeout: 20000 # Baglanti isteginin zaman asimi suresi (ms)
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
 info:
   app:
     name: employee-services microservices workshop
@@ -8,3 +22,7 @@ info:
     version: 0.0.1
 server:
   port: 8081
+department:
+  service:
+    url: http://localhost:8080/api/v1/departments/code/
+  
