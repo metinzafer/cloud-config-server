@@ -1,0 +1,18 @@
+server:
+  port: 9191
+spring:
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      server:
+        webflux:
+          globalcors:
+            corsConfigurations:
+              '[/**]':
+                allowedMethods: GET,POST,PUT,DELETE
+                allowedOrigins: '*'
+
+logging:
+  level:
+    org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping: DEBUG
