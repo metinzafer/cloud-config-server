@@ -44,3 +44,7 @@ management:
   endpoint:
     health:
       show-details: always 
+
+service:
+  module:
+    version: Ver. 0.0.1
