@@ -1,16 +1,23 @@
 server:
   port: 9191
 spring:
-  profiles:
-    active: dev
   cloud:
     gateway:
       server:
         webflux:
+          routes:
+            -   id: EMPLOYEE-SERVICE
+                predicates:
+                  - Path=/api/v1/employees/**
+                uri: lb://EMPLOYEE-SERVICE
+            -   id: DEPARTMENT-SERVICE
+                predicates:
+                  - Path=/api/v1/departments/**
+                uri: lb://DEPARTMENT-SERVICE
           globalcors:
             corsConfigurations:
               '[/**]':
-                allowedMethods: GET,POST,PUT,DELETE
+                allowedMethods: GET, POST, PUT, DELETE
                 allowedOrigins: '*'
 
 logging:
