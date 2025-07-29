@@ -28,6 +28,7 @@ spring:
         default-requeue-rejected: true
     publisher-confirm-type: correlated
     publisher-returns: true
+
 info:
   app:
     name: employee-services microservices workshop
