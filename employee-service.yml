@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+info:
+  app:
+    name: employee-services microservices workshop
+    description: microservices springboot workshop
+    version: 0.0.1
+server:
+  port: 8081
