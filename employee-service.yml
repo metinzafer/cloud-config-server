@@ -51,4 +51,4 @@ management:
 
 service:
   module:
-    version: Ver. 0.0.1
+    version: Ver. 0.0.2
