@@ -19,11 +19,7 @@ spring:
               '[/**]':
                 allowedMethods: GET, POST, PUT, DELETE
                 allowedOrigins: '*'
-  zipkin:
-    base-url: http://127.0.0.1:9411/
-    sender:
-      type: web
-      
+
 logging:
   level:
     org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping: DEBUG
@@ -47,9 +43,3 @@ management:
   endpoint:
     health:
       show-details: always 
-  tracing:
-    sampling:
-      probability: 1.0  # 100% tracing
-  zipkin:
-    tracing:
-      endpoint: http://127.0.0.1:9411/api/v2/spans  
