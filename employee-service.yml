@@ -83,10 +83,6 @@ logging:
       springframework:
         web: DEBUG
         
-service:
-  module:
-    version: Ver. 0.0.1
-
 resilience4j:
   circuitbreaker:
     instances:
@@ -107,3 +103,6 @@ resilience4j:
         maxRetryAttempts: 5
         waitDuration: 2s
 
+service:
+  module:
+    version: Ver. 0.0.2
