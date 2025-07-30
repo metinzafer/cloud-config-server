@@ -71,7 +71,10 @@ management:
   zipkin:
     tracing:
       endpoint: http://127.0.0.1:9411/api/v2/spans
-      
+  health:
+    circuitbreakers:
+      enabled: true
+    
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
@@ -103,3 +106,4 @@ resilience4j:
         registerHealthIndicator: true
         maxRetryAttempts: 5
         waitDuration: 2s
+
