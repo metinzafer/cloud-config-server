@@ -58,7 +58,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health
+        include: "*"
   info:
     env:
       enabled: true
@@ -90,7 +90,7 @@ service:
 resilience4j:
   circuitbreaker:
     instances:
-      EMPLOYEE-SERVICE:
+      employee-service:
         registerHealthIndicator: true
         failureRateThreshold: 50
         minimumNumberOfCalls: 5
@@ -102,7 +102,7 @@ resilience4j:
 
   retry:
     instances:
-      EMPLOYEE-SERVICE:
+      employee-service:
         registerHealthIndicator: true
         maxRetryAttempts: 5
         waitDuration: 2s
